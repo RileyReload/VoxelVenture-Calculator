@@ -4,6 +4,7 @@
     var Ez = document.getElementById("Ez");
     var Vk = document.getElementById("Vk");
     var Ek = document.getElementById("Ek");
+    var Pt = document.getElementById("Pt");
     var Dk = document.getElementById("Dk");
     var output = document.getElementById("out");
 
@@ -32,6 +33,7 @@
     var Zetsite = 0;
     var Cautite = 0;
     var Cursedfire = 0;
+    var Plasmyx = 0;
     var Impervium = 0;
     var Singularium = 0;
     var Bismuth = 0;
@@ -60,7 +62,18 @@
     var Granulite = 0;
     var Incyclite = 0;
 
+    //Shift 2
+    var Decaynix = 0;
+    var Ghouleum = 0;
+    var Sanguicaedis = 0;
+    var Phantasmire = 0;
+    var Enfanissin = 0;
+
     //Ruinus
+    var Bilaterite = 0;
+    var Sciniate = 0;
+    var Stalagstone = 0;
+    var Tangeriate = 0;
     var Fractastone = 0;
     var Hexaflexium = 0;
     var Radium = 0;
@@ -111,6 +124,10 @@
         if(isNaN(1*Ek.value)) elementak(0);
         else elementak(Ek.value);
 
+        //Pt
+        if(isNaN(1*Pt.value)) poltergeire(0);
+        else poltergeire(Pt.value);
+
         //Dk
         if(isNaN(1*Dk.value)) duskyze(0);
         else duskyze(Dk.value);
@@ -119,6 +136,16 @@
         output.innerHTML = makeList();
     })
 
+
+
+export function poltergeire(x){
+    binarel(2*x);
+    ectoplasmyx(3*x);
+    Enfanissin += 4*x;
+    Phantasmire += 5*x;
+    Sanguicaedis += 6*x;
+
+}
 
 export function elementak(x){
     endozivite(1*x);
@@ -239,6 +266,19 @@ export function pulsane(x){
     Rochestar += 1*x;
 }
 
+export function binarel(x){
+    Bilaterite += 1*x;
+    Sciniate += 3*x;
+    Stalagstone += 2*x;
+    Tangeriate += 3*x;
+}
+
+export function ectoplasmyx(x){
+    Decaynix += 5*x;
+    Ghouleum += 3*x;
+    Plasmyx += 2*x;
+}
+
 export function albinite(x){
      Runyx += 1*x;
      Ufrium += 1*x;
@@ -326,6 +366,16 @@ export function reset(){
     Utopium = 0;
     Jetchium = 0;
     Tafil = 0;
+    Sanguicaedis = 0;
+    Phantasmire = 0;
+    Enfanissin = 0;
+    Bilaterite = 0;
+    Sciniate = 0;
+    Stalagstone = 0;
+    Tangeriate = 0;
+    Plasmyx = 0;
+    Decaynix = 0;
+    Ghouleum = 0;
 
 }
 
@@ -420,9 +470,3 @@ export function makeList(){
 
     return out;
  }
-
-
-    
-
-
-
