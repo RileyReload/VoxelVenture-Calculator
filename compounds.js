@@ -330,7 +330,7 @@ export function reset(){
 }
 
 export function makeList(){
-    var out = "";
+    var out = "<br>Shift 0:<br>";
 
     if(Chlorophyte > 0) out += "<br>Chlorophyte x" + Chlorophyte;
     if(Sand > 0) out += "<br>Sand x" + Sand;
@@ -357,9 +357,12 @@ export function makeList(){
     if(Zetsite > 0) out += "<br>Zetsite x" + Zetsite;
     if(Cautite > 0) out += "<br>Cautite x" + Cautite;
     if(Cursedfire > 0) out += "<br>Cursedfire x" + Cursedfire;
+    if(Plasmyx > 0) out += "<br>Plasmyx x" + Plasmyx;
     if(Impervium > 0) out += "<br>Impervium x" + Impervium;
     if(Singularium > 0) out += "<br>Singularium x" + Singularium;
     if(Bismuth > 0) out += "<br>Bismuth x" + Bismuth;
+
+    out += "<br><br>Shift 1:<br>"
 
     //Shift 1
     if(Runyx > 0) out += "<br>Runyx x" + Runyx;
@@ -385,7 +388,22 @@ export function makeList(){
     if(Granulite > 0) out += "<br>Granulite x" + Granulite;
     if(Incyclite > 0) out += "<br>Incyclite x" + Incyclite;
 
+    out += "<br><br>Shift 2:<br>"
+
+    //Shift 2
+    if(Decaynix > 0) out += "<br>Decaynix x" + Decaynix;
+    if(Ghouleum > 0) out += "<br>Ghouleum x" + Ghouleum;
+    if(Sanguicaedis > 0) out += "<br>Sanguicaedis x" + Sanguicaedis;
+    if(Phantasmire > 0) out += "<br>Phantasmire x" + Phantasmire;
+    if(Enfanissin > 0) out += "<br>Enfanissin x" + Enfanissin;
+
+    out += "<br><br>Ruinus:<br>"
+
     //Ruinus
+    if(Bilaterite > 0) out += "<br>Bilaterite x" + Bilaterite;
+    if(Sciniate > 0) out += "<br>Sciniate x" + Sciniate;
+    if(Stalagstone > 0) out += "<br>Stalagstone x" + Stalagstone;
+    if(Tangeriate > 0) out += "<br>Tangeriate x" + Tangeriate;
     if(Fractastone > 0) out += "<br>Fractastone x" + Fractastone;
     if(Hexaflexium > 0) out += "<br>Hexaflexium x" + Hexaflexium;
     if(Radium > 0) out += "<br>Radium x" + Radium;
@@ -395,7 +413,11 @@ export function makeList(){
     if(Lightskyze > 0) out += "<br>Lightskyze x" + Lightskyze;
     if(Nightskyze > 0) out += "<br>Nightskyze x" + Nightskyze;
     if(Stasistiss > 0) out += "<br>Stasistiss x" + Stasistiss;
+
+    out += "<br><br>Depletia:<br>"
     
+    //Depletia
+
     return out;
  }
 
