@@ -859,7 +859,6 @@ export function makeList(){
     if(Necrix > 0) out += "<br>Necrix x" + Necrix;
     if(Regalin > 0) out += "<br>Regalin x" + Regalin;
     if(Manyullyn > 0) out += "<br>Manyullyn x" + Manyullyn;
-    if(Manyullyn > 0) out += "<br>Manyullyn x" + Manyullyn;
     if(Cubea > 0) out += "<br>Cubea x" + Cubea;
     if(Diversium > 0) out += "<br>Diversium x" + Diversium;
     if(Absurdium > 0) out += "<br>Absurdium x" + Absurdium;
