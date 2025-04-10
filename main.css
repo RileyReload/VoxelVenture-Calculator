@@ -1,0 +1,17 @@
+#stop{
+margin-top: 0px;
+margin-bottom: 5px;
+font-size: 24px;
+}
+
+#multitoolsBtn{
+    pointer-events: none;
+    background-color: gray;
+    text-decoration: line-through;
+}
+div.multitools{
+  #multiTs{
+    display: grid;
+    grid-template-columns: repeat(2,42px);
+  }  
+}
