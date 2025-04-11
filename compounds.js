@@ -1,4 +1,4 @@
-$(".extraComp").css("display", "none")
+$(".toggleExtraCompBtn").css("display", "none")
     var Vi2 = document.getElementById("Vi2");
     var Un1 = document.getElementById("Un1");
     var Ez = document.getElementById("Ez");
