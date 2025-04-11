@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="./main.css">
+<link rel="stylesheet" media="screen and (max-width: 599px)" href="./smallscreen.css">
+<link rel="stylesheet" media="screen and (min-width: 600px)" href="./midscreen.css">
+<link rel="stylesheet" media="screen and (min-width: 900px)" href="./widescreen.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="./compounds.js" type="module"></script>
 <head>
@@ -221,7 +223,7 @@
 
 
             <br>
-            <button id="toggleExtraCompBtn">Show extra compounds</button>
+            
 
             <!--
             <div class="planckspark">
@@ -231,11 +233,10 @@
             -->
 
         </div>
-        <div class="multitools">
-            <button id="multiTs">Transcendium &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Multitool</button>
-        </div>
-
-        <div class="listBtn">
+        
+        <div class="bottomBtns" style="display: block;">
+            
+        <button id="toggleExtraCompBtn">Show extra compounds</button>
         <br>
         <input type="button" id="btn1" value="Create List"> <button id="depths">Toggle Optimal Depths</button>
         <p>List of Materials:</p>
