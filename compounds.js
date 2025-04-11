@@ -1,4 +1,4 @@
-
+$(".extraComp").css("display", "none")
     var Vi2 = document.getElementById("Vi2");
     var Un1 = document.getElementById("Un1");
     var Ez = document.getElementById("Ez");
@@ -9,10 +9,28 @@
     var Ty = document.getElementById("Ty");
     var Un2 = document.getElementById("Un2");
     //var Pk = document.getElementById("Pk");
+    var Pm = document.getElementById("Pm");
     var Mt = document.getElementById("Mt");
     var Vn = document.getElementById("Vn");
     var Dk = document.getElementById("Dk");
+
+    var Ts = document.getElementById("Ts")
+    var DUk = document.getElementById("DUk")
+    var DAl = document.getElementById("DAl")
+    var Gx = document.getElementById("Gx")
+    var Ch = document.getElementById("Ch")
+    var Wv = document.getElementById("Wv")
+    var Nz = document.getElementById("Nz")
+    var Dv = document.getElementById("Dv")
+    var Ap = document.getElementById("Ap")
+    var Cx = document.getElementById("Cx")
+    var CVx = document.getElementById("CVx")
+    var TVx = document.getElementById("TVx")
+
     var output = document.getElementById("out");
+    var extraCompText = document.getElementById("toggleExtraCompBtn")
+    var Depths = false;
+    var ExtraComp = false;
 
     var Chlorophyte = 0;
     var Sand = 0;
@@ -138,7 +156,7 @@
     //Paradise
     var IridiumOre = 0;
     var Heliodor = 0;
-    var Nortt = 0;
+    var Norrt = 0;
     var Athenum = 0;
     var Cyalminum = 0;
     var Mythapollyon = 0;
@@ -157,7 +175,7 @@
     var Tetramyle = 0;
     var Divinivine = 0;
     var Kappron = 0;
-    var Gravital = 0;
+    var Gravitral = 0;
     var Etherglow = 0;
     var Journoule = 0;
 
@@ -177,7 +195,6 @@
     var Stasistiss = 0;
 
 
-
     //button switcher
     $("div.multitools").css("display", "none");
     $("div.compounds").css("display", "block");
@@ -192,12 +209,43 @@
         $("div.listBtn").css("display", "block");
     })
 
+    // toggle extra compounds
+    $("#toggleExtraCompBtn").click(function(){
+        
+        if(ExtraComp){ ExtraComp = false;
+            extraCompText.innerHTML = "Show extra compounds";
+        }
+        else{ ExtraComp = true;
+            extraCompText.innerHTML = "Hide extra compounds";
+        }
+        if(ExtraComp){
+            $(".extraComp").css("display", "")
+        }
+        else{
+            $(".extraComp").css("display", "none")
+        }
+    })
+
+    //toggle depths
+    $("#depths").click(function(){
+        if(Depths){ Depths = false;}
+        else{ Depths = true;}
+        if(Depths){
+            output.innerHTML = makeListDepth();
+        }
+        else{
+            output.innerHTML = makeList();
+        }
+    })
+
     //main button
     $("#btn1").click(function(){
         reset();
+
+        //Main Compounds
+
         //Vi++
         if(!isNaN(1*Vi2.value)) hyperviolium(Vi2.value);
-        
 
         //Un+
         if(!isNaN(1*Un1.value)){
@@ -206,7 +254,7 @@
         }
 
         //Ez
-        if(!isNaN(1*Ez.value)) endozivite(Ez.value);;
+        if(!isNaN(1*Ez.value)) endozivite(Ez.value);
 
         //Vk
         if(!isNaN(1*Vk.value)) vulkavium(Vk.value);
@@ -230,7 +278,10 @@
         if(!isNaN(1*Dk.value)) duskyze(Dk.value);
 
         //Pk
+        //aaaaaaaaa
 
+        //Pm
+        if(!isNaN(1*Pm.value)) primatter(Pm.value);
 
         //Mt
         if(!isNaN(1*Mt.value)) metarnityle(Mt.value);
@@ -241,10 +292,59 @@
         else venturium((parseInt(Vn.value)+1)/2);
         }  
 
+        //Extra Compounds
+
+        //Ts
+        if(!isNaN(1*Ts.value)) transcendium(Ts.value);
+
+        //DUk
+        if(!isNaN(1*DUk.value)) destUklic(DUk.value);
+
+        //DAl
+        if(!isNaN(1*DAl.value)) destAlbinite(DAl.value);
+
+        //Gx
+        if(!isNaN(1*Gx.value)) grawbix(Gx.value);
+
+        //Ch
+        if(!isNaN(1*Ch.value)) chromar(Ch.value);
+
+        //Wv
+        if(!isNaN(1*Wv.value)) wavettap(Wv.value);
+
+        //Nz
+        if(!isNaN(1*Nz.value)) nihilize(Nz.value);
+
+        //Dv
+        if(!isNaN(1*Dv.value)) apeirodyn(Dv.value);
+
+        //Ap
+        if(!isNaN(1*Ap.value)) apeirodyn(Ap.value);
+
+        //Cx
+        if(!isNaN(1*Cx.value)) complux(Cx.value);
+
+        //TVx
+        if(!isNaN(1*TVx.value)){
+        if(1*TVx.value % 2 == 0) trueVoxine(TVx.value/2);
+        else trueVoxine((parseInt(TVx.value)+1)/2);
+        }
+
+        //CVx
+        if(!isNaN(1*CVx.value)){
+        if(1*CVx.value % 64 == 0) chargedVoxine(CVx.value/64);
+        else chargedVoxine(Math.ceil(CVx.value/64));
+        }
+
         
 
-        //$("div.compounds").css("display", "none");
-        output.innerHTML = makeList();
+
+        if(Depths){
+            output.innerHTML = makeListDepth();
+        }
+        else{
+            output.innerHTML = makeList();
+        }
     })
 
 
@@ -263,18 +363,18 @@ export function trueVoxine(x){
         chargedVoxine(x/2);
     }
     else{
-         (chargedVoxine((x+1)/2));
+        (chargedVoxine((x+1)/2));
     }
     complux(2*x);
     Niobium += 2*x;
     Kappron += 4*x;
-    apeirodyn(4*x);
+    //apeirodyn(4*x);
     Nepium += 1*x;
 }
 
 export function chargedVoxine(x){
     Etherglow += 64*x;
-    Gravital += 7*x;
+    Gravitral += 7*x;
     hyperviolium(6*x);
     Quasine += 3*x;
     VoxianCluster += 16*x;
@@ -306,7 +406,7 @@ export function apeirodyn(x){
     Amperium += 7*x;
     Athenum += 7*x;
     Everstone += 32*x;
-    Nortt += 48*x;
+    Norrt += 48*x;
     refinedMercury(9*x);
 }
 
@@ -745,7 +845,7 @@ export function reset(){
     Phosphorus = 0;
     MercuryOre = 0;
     Athenum = 0;
-    Nortt = 0;
+    Norrt = 0;
     Everstone = 0;
     Amperium = 0;
     Cubea = 0;
@@ -761,7 +861,7 @@ export function reset(){
     Etherglow = 0;
     VoxianCluster = 0;
     Quasine = 0;
-    Gravital = 0;
+    Gravitral = 0;
     Wonderbrick = 0;
     Novaline = 0;
     Conjurian = 0;
@@ -787,20 +887,19 @@ export function makeList(){
     if(Sand > 0) out += "<br>Sand x" + Sand;
     if(Carbon > 0) out += "<br>Carbon x" + Carbon;
     if(Chromium > 0) out += "<br>Chromium x" + Chromium;
-    if(VoxianCluster > 0) out += "<br>Voxian Cluster x" + VoxianCluster;
     if(Tanzanite > 0) out += "<br>Tanzanite x" + Tanzanite;
-    if(PalladiumOre > 0) out += "<br>Palladium Ore x" + PalladiumOre;
     if(Azurite > 0) out += "<br>Azurite x" + Azurite;
     if(Nepium > 0) out += "<br>Nepium x" + Nepium;
+    if(PalladiumOre > 0) out += "<br>Palladium Ore x" + PalladiumOre;
     if(Violium > 0) out += "<br>Violium x" + Violium;
-    if(Phosphorus > 0) out += "<br>Phosphorus x" + Phosphorus;
     if(Osmium > 0) out += "<br>Osmium x" + Osmium;
-    if(Desoleium > 0) out += "<br>Desoleium x" + Desoleium;
     if(Painite > 0) out += "<br>Painite x" + Painite;
+    if(Phosphorus > 0) out += "<br>Phosphorus x" + Phosphorus;
+    if(Desoleium > 0) out += "<br>Desoleium x" + Desoleium;
     if(FireCrystal > 0) out += "<br>Fire Crystal x" + FireCrystal;
-    if(Adurite > 0) out += "<br>Adurite x" + Adurite;
-    if(Luxium > 0) out += "<br>Luxium x" + Luxium;
     if(Photonyke > 0) out += "<br>Photonyke x" + Photonyke;
+    if(Luxium > 0) out += "<br>Luxium x" + Luxium;
+    if(Adurite > 0) out += "<br>Adurite x" + Adurite;
     if(Cragnium > 0) out += "<br>Cragnium x" + Cragnium;
     if(Vermite > 0) out += "<br>Vermite x" + Vermite;
     if(Viridian > 0) out += "<br>Viridian x" + Viridian;
@@ -808,8 +907,8 @@ export function makeList(){
     if(Unobtanium > 0) out += "<br>Unobtanium x" + Unobtanium;
     if(Amperium > 0) out += "<br>Amperium x" + Amperium;
     if(Rhodium > 0) out += "<br>Rhodium x" + Rhodium;
-    if(MercuryOre > 0) out += "<br>Mercury Ore x" + MercuryOre;
     if(Chrysoberyl > 0) out += "<br>Chrysoberyl x" + Chrysoberyl;
+    if(MercuryOre > 0) out += "<br>Mercury Ore x" + MercuryOre;
     if(Ferozium > 0) out += "<br>Ferozium x" + Ferozium;
     if(Nebulyium > 0) out += "<br>Nebulyium x" + Nebulyium;
     if(Spectrian > 0) out += "<br>Spectrian x" + Spectrian;
@@ -820,69 +919,69 @@ export function makeList(){
     if(Blazium > 0) out += "<br>Blazium x" + Blazium;
     if(Pyrotheium > 0) out += "<br>Pyrotheium x" + Pyrotheium;
     if(Everstone > 0) out += "<br>Everstone x" + Everstone;
-    if(Combustium > 0) out += "<br>Combustium x" + Combustium;
     if(Technetium > 0) out += "<br>Technetium x" + Technetium;
     if(Abysmium > 0) out += "<br>Abysmium x" + Abysmium;
     if(Compressium > 0) out += "<br>Compressium x" + Compressium;
-    if(Quantizite > 0) out += "<br>Quantizite x" + Quantizite;
     if(Utopium > 0) out += "<br>Utopium x" + Utopium;
     if(Cryptium > 0) out += "<br>Cryptium x" + Cryptium;
     if(Infernum > 0) out += "<br>Infernum x" + Infernum;
+    if(Quantizite > 0) out += "<br>Quantizite x" + Quantizite;
     if(Jetchium > 0) out += "<br>Jetchium x" + Jetchium;
     if(Tafil > 0) out += "<br>Tafil x" + Tafil;
     if(Zetsite > 0) out += "<br>Zetsite x" + Zetsite;
-    if(Cautite > 0) out += "<br>Cautite x" + Cautite;
-    if(Cursedfire > 0) out += "<br>Cursedfire x" + Cursedfire;
     if(Plasmyx > 0) out += "<br>Plasmyx x" + Plasmyx;
     if(Xasium > 0) out += "<br>Xasium x" + Xasium;
+    if(Cautite > 0) out += "<br>Cautite x" + Cautite;
+    if(Cursedfire > 0) out += "<br>Cursedfire x" + Cursedfire;
+    if(Combustium > 0) out += "<br>Combustium x" + Combustium;
     if(Impervium > 0) out += "<br>Impervium x" + Impervium;
-    if(Atomite > 0) out += "<br>Atomite x" + Atomite;
-    if(Singularium > 0) out += "<br>Singularium x" + Singularium;
     if(Bismuth > 0) out += "<br>Bismuth x" + Bismuth;
+    if(Singularium > 0) out += "<br>Singularium x" + Singularium;
+    if(Atomite > 0) out += "<br>Atomite x" + Atomite;
 
     out += "<br><br>Shift 1:<br>"
 
     //Shift 1
     if(ZincOre > 0) out += "<br>Zinc Ore x" + ZincOre;
+    if(Attrite > 0) out += "<br>Attrite x" + Attrite;
+    if(Xepil > 0) out += "<br>Xepil x" + Xepil;
+    if(RiftRemnant > 0) out += "<br>Rift Remnant x" + RiftRemnant;
+    if(Feldspar > 0) out += "<br>Feldspar x" + Feldspar;
+    if(Corruptium > 0) out += "<br>Corruptium x" + Corruptium;
+    if(Tourmaline > 0) out += "<br>Tourmaline x" + Tourmaline;
+    if(Cursedcurrent > 0) out += "<br>Cursedcurrent x" + Cursedcurrent;
+    if(Niobium > 0) out += "<br>Niobium x" + Niobium;
     if(Runyx > 0) out += "<br>Runyx x" + Runyx;
     if(Ufrium > 0) out += "<br>Ufrium x" + Ufrium;
     if(Obladite > 0) out += "<br>Obladite x" + Obladite;
-    if(Xepil > 0) out += "<br>Xepil x" + Xepil;
-    if(RiftRemnant > 0) out += "<br>Rift Remnant x" + RiftRemnant;
-    if(Cursedcurrent > 0) out += "<br>Cursedcurrent x" + Cursedcurrent;
-    if(Corruptium > 0) out += "<br>Corruptium x" + Corruptium;
-    if(Attrite > 0) out += "<br>Attrite x" + Attrite;
-    if(Feldspar > 0) out += "<br>Feldspar x" + Feldspar;
-    if(Tourmaline > 0) out += "<br>Tourmaline x" + Tourmaline;
-    if(Niobium > 0) out += "<br>Niobium x" + Niobium;
     if(Hyperbolt > 0) out += "<br>Hyperbolt x" + Hyperbolt;
     if(Necrix > 0) out += "<br>Necrix x" + Necrix;
     if(Regalin > 0) out += "<br>Regalin x" + Regalin;
     if(Manyullyn > 0) out += "<br>Manyullyn x" + Manyullyn;
     if(Cubea > 0) out += "<br>Cubea x" + Cubea;
     if(Diversium > 0) out += "<br>Diversium x" + Diversium;
-    if(Absurdium > 0) out += "<br>Absurdium x" + Absurdium;
     if(Smouldersite > 0) out += "<br>Smouldersite x" + Smouldersite;
     if(Infrarize > 0) out += "<br>Infrarize x" + Infrarize;
-    if(Spicyte > 0) out += "<br>Spicyte x" + Spicyte;
     if(Cinderplate > 0) out += "<br>Cinderplate x" + Cinderplate;
+    if(Spicyte > 0) out += "<br>Spicyte x" + Spicyte;
     if(Aftermite > 0) out += "<br>Aftermite x" + Aftermite;
     if(Implodium > 0) out += "<br>Implodium x" + Implodium;
+    if(Absurdium > 0) out += "<br>Absurdium x" + Absurdium;
     if(Funkylite > 0) out += "<br>Funkylite x" + Funkylite;
-    if(Quarkian > 0) out += "<br>Quarkian x" + Quarkian;
-    if(Antiquarkian > 0) out += "<br>Antiquarkian x" + Antiquarkian;
     if(Gluonyke > 0) out += "<br>Gluonyke x" + Gluonyke;
     if(Univine > 0) out += "<br>Univine x" + Univine;
     if(Quasine > 0) out += "<br>Quasine x" + Quasine;
-    if(Cryotheium > 0) out += "<br>Cryotheium x" + Cryotheium;
-    if(SolidNitrogen > 0) out += "<br>Solid Nitrogen x" + SolidNitrogen;
-    if(Frystwyst > 0) out += "<br>Frystwyst x" + Frystwyst;
-    if(Blizzeride > 0) out += "<br>Blizzeride x" + Blizzeride;
+    if(Quarkian > 0) out += "<br>Quarkian x" + Quarkian;
+    if(Antiquarkian > 0) out += "<br>Antiquarkian x" + Antiquarkian;
     if(LiquidHelium> 0) out += "<br>Liquid Helium x" + LiquidHelium;
-    if(Flickerfreeze > 0) out += "<br>Flickerfreeze x" + Flickerfreeze;
+    if(Cryotheium > 0) out += "<br>Cryotheium x" + Cryotheium;
+    if(Frystwyst > 0) out += "<br>Frystwyst x" + Frystwyst;
     if(Frostflake > 0) out += "<br>Frostflake x" + Frostflake;
+    if(Blizzeride > 0) out += "<br>Blizzeride x" + Blizzeride;
     if(Granulite > 0) out += "<br>Granulite x" + Granulite;
+    if(Flickerfreeze > 0) out += "<br>Flickerfreeze x" + Flickerfreeze;
     if(Incyclite > 0) out += "<br>Incyclite x" + Incyclite;
+    if(SolidNitrogen > 0) out += "<br>Solid Nitrogen x" + SolidNitrogen;
 
     out += "<br><br>Graveyard:<br>"
 
@@ -890,14 +989,13 @@ export function makeList(){
     if(Ichryde > 0) out += "<br>Ichryde x" + Ichryde;
     if(Decaynix > 0) out += "<br>Decaynix x" + Decaynix;
     if(Ghouleum > 0) out += "<br>Ghouleum x" + Ghouleum;
-    if(Sanguicaedis > 0) out += "<br>Sanguicaedis x" + Sanguicaedis;
-    if(CalciumOre > 0) out += "<br>Calcium Ore x" + CalciumOre;
-    if(HafniumOre > 0) out += "<br>Hafnium Ore x" + HafniumOre;
     if(Hieroglyte > 0) out += "<br>Hieroglyte Ore x" + Hieroglyte;
     if(Monoflame > 0) out += "<br>Monoflame x" + Monoflame;
     if(Monolite > 0) out += "<br>Monolite x" + Monolite;
-    if(Tissuryal > 0) out += "<br>Tissuryal x" + Tissuryal;
     if(Disruptoil > 0) out += "<br>Disruptoil x" + Disruptoil;
+    if(Tissuryal > 0) out += "<br>Tissuryal x" + Tissuryal;
+    if(HafniumOre > 0) out += "<br>Hafnium Ore x" + HafniumOre;
+    if(Sanguicaedis > 0) out += "<br>Sanguicaedis x" + Sanguicaedis;
     if(Axnit > 0) out += "<br>Axnit x" + Axnit;
     if(Iocryx > 0) out += "<br>Iocryx x" + Iocryx;
     if(Anarquize > 0) out += "<br>Anarquize x" + Anarquize;
@@ -905,54 +1003,239 @@ export function makeList(){
     if(Enfanissin > 0) out += "<br>Enfanissin x" + Enfanissin;
     if(Poindextire > 0) out += "<br>Poindextire x" + Poindextire;
     if(Apognosive > 0) out += "<br>Apognosive x" + Apognosive;
-    if(Kragtonyke > 0) out += "<br>Kragtonyke x" + Kragtonyke;
     if(Obliviore > 0) out += "<br>Obliviore x" + Obliviore;
+    if(Kragtonyke > 0) out += "<br>Kragtonyke x" + Kragtonyke;
+    if(CalciumOre > 0) out += "<br>Calcium Ore x" + CalciumOre;
 
     out += "<br><br>Paradise:<br>"
 
     //Paradise
-    if(IridiumOre > 0) out += "<br>Iridium Ore x" + IridiumOre;
-    if(Heliodor > 0) out += "<br>Heliodor x" + Heliodor;
-    if(Cyalminum > 0) out += "<br>Cyalminum x" + Cyalminum;
-    if(Mythapollyon > 0) out += "<br>Mythapollyon x" + Mythapollyon;
-    if(Deltodyx > 0) out += "<br>Deltodyx x" + Deltodyx;
-    if(Destilliur > 0) out += "<br>Destilliur x" + Destilliur;
+
     if(Hallowze > 0) out += "<br>Hallowze x" + Hallowze;
-    if(Zenthineum > 0) out += "<br>Zenthineum x" + Zenthineum;
+    if(Destilliur > 0) out += "<br>Destilliur x" + Destilliur;
+    if(Cyalminum > 0) out += "<br>Cyalminum x" + Cyalminum;
+    if(Heliodor > 0) out += "<br>Heliodor x" + Heliodor;
+    if(Mythapollyon > 0) out += "<br>Mythapollyon x" + Mythapollyon;
+    if(Wonderbrick > 0) out += "<br>Wonderbrick x" + Wonderbrick;
+    if(Deltodyx > 0) out += "<br>Deltodyx x" + Deltodyx;
     if(Miraculite > 0) out += "<br>Miraculite x" + Miraculite;
-    if(Temporian > 0) out += "<br>Temporian x" + Temporian;
+    if(Etherglow > 0) out += "<br>Etherglow x" + Etherglow;
+    if(Divinivine > 0) out += "<br>Divinivine x" + Divinivine;
+    if(Zenthineum > 0) out += "<br>Zenthineum x" + Zenthineum;
     if(Aerotheium > 0) out += "<br>Aerotheium x" + Aerotheium;
     if(Petrotheium > 0) out += "<br>Petrotheium x" + Petrotheium;
-    if(Conjurian > 0) out += "<br>Conjurian x" + Conjurian;
+    if(Athenum > 0) out += "<br>Athenum x" + Athenum;
     if(Novaline > 0) out += "<br>Novaline x" + Novaline;
     if(Tetrabeam > 0) out += "<br>Tetrabeam x" + Tetrabeam;
     if(Tetramyle > 0) out += "<br>Tetramyle x" + Tetramyle;
-    if(Divinivine > 0) out += "<br>Divinivine x" + Divinivine;
-    if(Nortt > 0) out += "<br>Nortt x" + Nortt;
-    if(Athenum > 0) out += "<br>Athenum x" + Athenum;
-    if(Etherglow > 0) out += "<br>Etherglow x" + Etherglow;
     if(Kappron > 0) out += "<br>Kappron x" + Kappron;
-    if(Gravital > 0) out += "<br>Gravital x" + Gravital;
-    if(Wonderbrick > 0) out += "<br>Wonderbrick x" + Wonderbrick;
+    if(Conjurian > 0) out += "<br>Conjurian x" + Conjurian;
+    if(Temporian > 0) out += "<br>Temporian x" + Temporian;
+    if(Gravitral > 0) out += "<br>Gravitral x" + Gravitral;
     if(Journoule > 0) out += "<br>Journoule x" + Journoule;
+    if(Norrt > 0) out += "<br>Norrt x" + Norrt;
+    if(IridiumOre > 0) out += "<br>Iridium Ore x" + IridiumOre;
+    if(VoxianCluster > 0) out += "<br>Voxian Cluster x" + VoxianCluster;
     
     
     out += "<br><br>Ruinus:<br>"
 
     //Ruinus
     if(Bilaterite > 0) out += "<br>Bilaterite x" + Bilaterite;
-    if(Sciniate > 0) out += "<br>Sciniate x" + Sciniate;
     if(Stalagstone > 0) out += "<br>Stalagstone x" + Stalagstone;
+    if(Stasistiss > 0) out += "<br>Stasistiss x" + Stasistiss ;
+    if(Sciniate > 0) out += "<br>Sciniate x" + Sciniate;
     if(Tangeriate > 0) out += "<br>Tangeriate x" + Tangeriate;
     if(Fractastone > 0) out += "<br>Fractastone x" + Fractastone;
     if(Hexaflexium > 0) out += "<br>Hexaflexium x" + Hexaflexium;
     if(Radium > 0) out += "<br>Radium x" + Radium;
     if(Rochestar > 0) out += "<br>Rochestar x" + Rochestar;
     if(Creedite > 0) out += "<br>Creedite x" + Creedite;
-    if(Fluorite > 0) out += "<br>Fluorite x" + Fluorite;
     if(Lightskyze > 0) out += "<br>Lightskyze x" + Lightskyze;
     if(Nightskyze > 0) out += "<br>Nightskyze x" + Nightskyze;
-    if(Stasistiss > 0) out += "<br>Stasistiss x" + Stasistiss;
+    if(Fluorite > 0) out += "<br>Fluorite x" + Fluorite;
+    
+    //out += "<br><br>Depletia:<br>"
+    
+    //Depletia
+
+    return out;
+ }
+
+ export function makeListDepth(){
+    var out = "<br>Shift 0:<br>";
+    
+    if(Chlorophyte > 0) out += "<br>Chlorophyte x" + Chlorophyte  + " Surface";
+    if(Sand > 0) out += "<br>Sand x" + Sand  + " Surface";
+    if(Carbon > 0) out += "<br>Carbon x" + Carbon  + " (600m)";
+    if(Chromium > 0) out += "<br>Chromium x" + Chromium  + " (1000m)";
+    if(Tanzanite > 0) out += "<br>Tanzanite x" + Tanzanite  + " (1000m-1400m)";
+    if(Azurite > 0) out += "<br>Azurite x" + Azurite  + " (1375m)";
+    if(Nepium > 0) out += "<br>Nepium x" + Nepium  + " Nepium (1400m-1900m)";
+    if(PalladiumOre > 0) out += "<br>Palladium Ore x" + PalladiumOre  + " (1800m)";
+    if(Violium > 0) out += "<br>Violium x" + Violium  + " (1800m)";
+    if(Osmium > 0) out += "<br>Osmium x" + Osmium  + " (2000m)";
+    if(Painite > 0) out += "<br>Painite x" + Painite  + " (2000m-2500m)";
+    if(Phosphorus > 0) out += "<br>Phosphorus x" + Phosphorus  + " (2400m)";
+    if(Desoleium > 0) out += "<br>Desoleium x" + Desoleium  + " (2400m)";
+    if(FireCrystal > 0) out += "<br>Fire Crystal x" + FireCrystal  + " (2400m)";
+    if(Photonyke > 0) out += "<br>Photonyke x" + Photonyke  + " (2500m-3000m)";
+    if(Luxium > 0) out += "<br>Luxium x" + Luxium  + " (2600m)";
+    if(Adurite > 0) out += "<br>Adurite x" + Adurite  + " (2900m)";
+    if(Cragnium > 0) out += "<br>Cragnium x" + Cragnium  + " (3000m)";
+    if(Vermite > 0) out += "<br>Vermite x" + Vermite  + " (3000m-3475m)";
+    if(Viridian > 0) out += "<br>Viridian x" + Viridian  + " (3470m)";
+    if(Luminte > 0) out += "<br>Luminte x" + Luminte  + " (3475m)";
+    if(Unobtanium > 0) out += "<br>Unobtanium x" + Unobtanium  + " (3480m-3520m)";
+    if(Amperium > 0) out += "<br>Amperium x" + Amperium  + " (3480m-3520m)";
+    if(Rhodium > 0) out += "<br>Rhodium x" + Rhodium  + " (3525m)";
+    if(Chrysoberyl > 0) out += "<br>Chrysoberyl x" + Chrysoberyl  + " (3525m-4000m)";
+    if(MercuryOre > 0) out += "<br>Mercury Ore x" + MercuryOre  + " (3900m)";
+    if(Ferozium > 0) out += "<br>Ferozium x" + Ferozium  + " (3900m)";
+    if(Nebulyium > 0) out += "<br>Nebulyium x" + Nebulyium  + " (3900m)";
+    if(Spectrian > 0) out += "<br>Spectrian x" + Spectrian  + " (3980m)";
+    if(TimeCrystal > 0) out += "<br>Time Crystal x" + TimeCrystal  + " (3980m)";
+    if(Galaxite > 0) out += "<br>Galaxite x" + Galaxite  + " (3980m)";
+    if(Dystopium > 0) out += "<br>Dystopium x" + Dystopium  + " (4000m)";
+    if(Flamanine > 0) out += "<br>Flamanine x" + Flamanine  + " (4500m)";
+    if(Blazium > 0) out += "<br>Blazium x" + Blazium  + " (4500m)";
+    if(Pyrotheium > 0) out += "<br>Pyrotheium x" + Pyrotheium  + " (4500m)";
+    if(Everstone > 0) out += "<br>Everstone x" + Everstone  + " (4500m)";
+    if(Technetium > 0) out += "<br>Technetium x" + Technetium  + " (4500m-5000m)";
+    if(Abysmium > 0) out += "<br>Abysmium x" + Abysmium  + " (5000m)";
+    if(Compressium > 0) out += "<br>Compressium x" + Compressium  + " (5000m)";
+    if(Utopium > 0) out += "<br>Utopium x" + Utopium  + " (5000m)";
+    if(Cryptium > 0) out += "<br>Cryptium x" + Cryptium  + " (5200m)";
+    if(Infernum > 0) out += "<br>Infernum x" + Infernum  + " (5450m)";
+    if(Quantizite > 0) out += "<br>Quantizite x" + Quantizite  + " (5500m)";
+    if(Jetchium > 0) out += "<br>Jetchium x" + Jetchium  + " (5500m)";
+    if(Tafil > 0) out += "<br>Tafil x" + Tafil  + " (5500m)";
+    if(Zetsite > 0) out += "<br>Zetsite x" + Zetsite  + " (5800m)";
+    if(Plasmyx > 0) out += "<br>Plasmyx x" + Plasmyx  + " (5850m)";
+    if(Xasium > 0) out += "<br>Xasium x" + Xasium  + " (5885m)";
+    if(Cautite > 0) out += "<br>Cautite x" + Cautite  + " (5900m)";
+    if(Cursedfire > 0) out += "<br>Cursedfire x" + Cursedfire  + " (5900m)";
+    if(Combustium > 0) out += "<br>Combustium x" + Combustium  + " (5900m)";
+    if(Impervium > 0) out += "<br>Impervium x" + Impervium  + " (5905m)";
+    if(Bismuth > 0) out += "<br>Bismuth x" + Bismuth  + " (5975m)";
+    if(Singularium > 0) out += "<br>Singularium x" + Singularium  + " (5975m)";
+    if(Atomite > 0) out += "<br>Atomite x" + Atomite  + " (5999m)";
+
+    out += "<br><br>Shift 1:<br>"
+
+    //Shift 1
+    if(ZincOre > 0) out += "<br>Zinc Ore x" + ZincOre + " (6150m)";
+    if(Attrite > 0) out += "<br>Attrite x" + Attrite + " (6100m)";
+    if(Xepil > 0) out += "<br>Xepil x" + Xepil + " (6300m)";
+    if(RiftRemnant > 0) out += "<br>Rift Remnant x" + RiftRemnant + " (6375m)";
+    if(Feldspar > 0) out += "<br>Feldspar x" + Feldspar + " (6400m)";
+    if(Corruptium > 0) out += "<br>Corruptium x" + Corruptium + " (6450m)";
+    if(Tourmaline > 0) out += "<br>Tourmaline x" + Tourmaline + " (6600m)";
+    if(Cursedcurrent > 0) out += "<br>Cursedcurrent x" + Cursedcurrent + " (6750m)";
+    if(Niobium > 0) out += "<br>Niobium x" + Niobium + " (6975m-7000m)";
+    if(Runyx > 0) out += "<br>Runyx x" + Runyx + " (7000m)";
+    if(Ufrium > 0) out += "<br>Ufrium x" + Ufrium + " (7000m)";
+    if(Obladite > 0) out += "<br>Obladite x" + Obladite + " (7000m)";
+    if(Hyperbolt > 0) out += "<br>Hyperbolt x" + Hyperbolt + " (7000m)";
+    if(Necrix > 0) out += "<br>Necrix x" + Necrix + " (7100m)";
+    if(Regalin > 0) out += "<br>Regalin x" + Regalin + " (7250m)";
+    if(Manyullyn > 0) out += "<br>Manyullyn x" + Manyullyn + " (7300m)";
+    if(Cubea > 0) out += "<br>Cubea x" + Cubea + " (7450m)";
+    if(Diversium > 0) out += "<br>Diversium x" + Diversium + " (7475m)";
+    if(Smouldersite > 0) out += "<br>Smouldersite x" + Smouldersite + " (7505m + 8195m)";
+    if(Infrarize > 0) out += "<br>Infrarize x" + Infrarize + " (7525m)";
+    if(Cinderplate > 0) out += "<br>Cinderplate x" + Cinderplate + " (7900m)";
+    if(Spicyte > 0) out += "<br>Spicyte x" + Spicyte + " (8100m)";
+    if(Aftermite > 0) out += "<br>Aftermite x" + Aftermite + " (8200m)";
+    if(Implodium > 0) out += "<br>Implodium x" + Implodium + " (8200m)";
+    if(Absurdium > 0) out += "<br>Absurdium x" + Absurdium + " (8200m-8300m)";
+    if(Funkylite > 0) out += "<br>Funkylite x" + Funkylite + " (8200m-8300m)";
+    if(Gluonyke > 0) out += "<br>Gluonyke x" + Gluonyke + " (8210m + 8290m)";
+    if(Univine > 0) out += "<br>Univine x" + Univine + " (8220m + 8280m)";
+    if(Quasine > 0) out += "<br>Quasine x" + Quasine + " (8250m)";
+    if(Quarkian > 0) out += "<br>Quarkian x" + Quarkian + " (8300m)";
+    if(Antiquarkian > 0) out += "<br>Antiquarkian x" + Antiquarkian + " (8300m)";
+    if(LiquidHelium> 0) out += "<br>Liquid Helium x" + LiquidHelium + " (8300m-8999m)";
+    if(Cryotheium > 0) out += "<br>Cryotheium x" + Cryotheium + " (8300m)";
+    if(Frystwyst > 0) out += "<br>Frystwyst x" + Frystwyst + " (8400m)";
+    if(Frostflake > 0) out += "<br>Frostflake x" + Frostflake + " (8700m)";
+    if(Blizzeride > 0) out += "<br>Blizzeride x" + Blizzeride + " (8750m)";
+    if(Granulite > 0) out += "<br>Granulite x" + Granulite + " (8750m-8999m)";
+    if(Flickerfreeze > 0) out += "<br>Flickerfreeze x" + Flickerfreeze + " (8900m)";
+    if(Incyclite > 0) out += "<br>Incyclite x" + Incyclite + " (8970m-8999m)";
+    if(SolidNitrogen > 0) out += "<br>Solid Nitrogen x" + SolidNitrogen + " (8999m)";
+
+    out += "<br><br>Graveyard:<br>"
+
+    //Graveyard
+    if(Ichryde > 0) out += "<br>Ichryde x" + Ichryde + " (9001m-9999m)";
+    if(Decaynix > 0) out += "<br>Decaynix x" + Decaynix + " (9075m)";
+    if(Ghouleum > 0) out += "<br>Ghouleum x" + Ghouleum + " (9100m)";
+    if(Hieroglyte > 0) out += "<br>Hieroglyte Ore x" + Hieroglyte + " (9250m)";
+    if(Monoflame > 0) out += "<br>Monoflame x" + Monoflame + " (9300m)";
+    if(Monolite > 0) out += "<br>Monolite x" + Monolite + " (9300m)";
+    if(Disruptoil > 0) out += "<br>Disruptoil x" + Disruptoil + " (9360m)";
+    if(Tissuryal > 0) out += "<br>Tissuryal x" + Tissuryal + " (9375m)";
+    if(HafniumOre > 0) out += "<br>Hafnium Ore x" + HafniumOre + " (9394m)";
+    if(Sanguicaedis > 0) out += "<br>Sanguicaedis x" + Sanguicaedis + " (9400m)";
+    if(Axnit > 0) out += "<br>Axnit x" + Axnit + " (9400m)";
+    if(Iocryx > 0) out += "<br>Iocryx x" + Iocryx + " (9400m)";
+    if(Anarquize > 0) out += "<br>Anarquize x" + Anarquize + " (9400m)";
+    if(Phantasmire > 0) out += "<br>Phantasmire x" + Phantasmire + "(9420m) ";
+    if(Enfanissin > 0) out += "<br>Enfanissin x" + Enfanissin + " (9420m)";
+    if(Poindextire > 0) out += "<br>Poindextire x" + Poindextire + " (9460m)";
+    if(Apognosive > 0) out += "<br>Apognosive x" + Apognosive + " (9460m)";
+    if(Obliviore > 0) out += "<br>Obliviore x" + Obliviore + " (9475m)";
+    if(Kragtonyke > 0) out += "<br>Kragtonyke x" + Kragtonyke + " (9480m)";
+    if(CalciumOre > 0) out += "<br>Calcium Ore x" + CalciumOre + " (9495m)";
+
+    out += "<br><br>Paradise:<br>"
+
+    //Paradise
+    
+    if(Hallowze > 0) out += "<br>Hallowze x" + Hallowze + " (9600m)";
+    if(Destilliur > 0) out += "<br>Destilliur x" + Destilliur + " (9600m)";
+    if(Cyalminum > 0) out += "<br>Cyalminum x" + Cyalminum + " (9600m)";
+    if(Heliodor > 0) out += "<br>Heliodor x" + Heliodor + " (9635m)";
+    if(Mythapollyon > 0) out += "<br>Mythapollyon x" + Mythapollyon + " (9700m-9800m)";
+    if(Wonderbrick > 0) out += "<br>Wonderbrick x" + Wonderbrick + " (9700m)";
+    if(Deltodyx > 0) out += "<br>Deltodyx x" + Deltodyx + " (9760m)";
+    if(Miraculite > 0) out += "<br>Miraculite x" + Miraculite + "  (9790m + 9930m)";
+    if(Etherglow > 0) out += "<br>Etherglow x" + Etherglow + " (9800m)";
+    if(Divinivine > 0) out += "<br>Divinivine x" + Divinivine + " (9825m)";
+    if(Zenthineum > 0) out += "<br>Zenthineum x" + Zenthineum + " (9830m)";
+    if(Aerotheium > 0) out += "<br>Aerotheium x" + Aerotheium + " (9840m)";
+    if(Petrotheium > 0) out += "<br>Petrotheium x" + Petrotheium + " (9900m)";
+    if(Athenum > 0) out += "<br>Athenum x" + Athenum + " (9905m)";
+    if(Novaline > 0) out += "<br>Novaline x" + Novaline + " (9910m)";
+    if(Tetrabeam > 0) out += "<br>Tetrabeam x" + Tetrabeam + " (9920m-9930m)";
+    if(Tetramyle > 0) out += "<br>Tetramyle x" + Tetramyle + " (9920m-9930m)";
+    if(Kappron > 0) out += "<br>Kappron x" + Kappron + " (9920m + 9980m)";
+    if(Conjurian > 0) out += "<br>Conjurian x" + Conjurian + " (9925m)";
+    if(Temporian > 0) out += "<br>Temporian x" + Temporian + " (9940m)";
+    if(Gravitral > 0) out += "<br>Gravitral x" + Gravitral + " (9960m)";
+    if(Journoule > 0) out += "<br>Journoule x" + Journoule + " (9970m-9999m)";
+    if(Norrt > 0) out += "<br>Norrt x" + Norrt + " (9999m)";
+    if(IridiumOre > 0) out += "<br>Iridium Ore x" + IridiumOre + " (9999m)";
+    if(VoxianCluster > 0) out += "<br>Voxian Cluster x" + VoxianCluster + " (9999m)";
+    
+    
+    out += "<br><br>Ruinus:<br>"
+
+    //Ruinus
+    if(Bilaterite > 0) out += "<br>Bilaterite x" + Bilaterite + " (120m)";
+    if(Stalagstone > 0) out += "<br>Stalagstone x" + Stalagstone + " (200m)";
+    if(Stasistiss > 0) out += "<br>Stasistiss x" + Stasistiss + " (225m + 425m)";
+    if(Sciniate > 0) out += "<br>Sciniate x" + Sciniate + " (300m)";
+    if(Tangeriate > 0) out += "<br>Tangeriate x" + Tangeriate + " (350m)";
+    if(Fractastone > 0) out += "<br>Fractastone x" + Fractastone + " (450m)";
+    if(Hexaflexium > 0) out += "<br>Hexaflexium x" + Hexaflexium + " (450m)";
+    if(Radium > 0) out += "<br>Radium x" + Radium + " (465m)";
+    if(Rochestar > 0) out += "<br>Rochestar x" + Rochestar + " (510m)";
+    if(Creedite > 0) out += "<br>Creedite x" + Creedite + " (520m)";
+    if(Lightskyze > 0) out += "<br>Lightskyze x" + Lightskyze + " (580m)";
+    if(Nightskyze > 0) out += "<br>Nightskyze x" + Nightskyze + " (600m)";
+    if(Fluorite > 0) out += "<br>Fluorite x" + Fluorite + " (625m)";
     
     //out += "<br><br>Depletia:<br>"
     
