@@ -368,7 +368,7 @@ export function trueVoxine(x){
     complux(2*x);
     Niobium += 2*x;
     Kappron += 4*x;
-    //apeirodyn(4*x);
+    apeirodyn(4*x);
     Nepium += 1*x;
 }
 
