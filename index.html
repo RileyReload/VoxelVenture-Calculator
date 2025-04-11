@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" media="screen and (max-width: 599px)" href="./smallscreen.css">
-<link rel="stylesheet" media="screen and (min-width: 600px)" href="./midscreen.css">
-<link rel="stylesheet" media="screen and (min-width: 900px)" href="./widescreen.css">
+    <link rel="stylesheet" media="screen and (max-width: 599px)" href="./smallscreen.css">
+    <link rel="stylesheet" media="screen and (min-width: 600px)" href="./midscreen.css">
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="./widescreen.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="./compounds.js" type="module"></script>
 <head>
@@ -222,8 +222,7 @@
             <br>
 
 
-            <br>
-            
+           
 
             <!--
             <div class="planckspark">
@@ -234,12 +233,15 @@
 
         </div>
         
-        <div class="bottomBtns" style="display: block;">
-            
-        <button id="toggleExtraCompBtn">Show extra compounds</button>
-        <br>
-        <div style="height: 4px;"></div>
-        <input type="button" id="btn1" value="Create List"> <button id="depths">Toggle Optimal Depths</button>
+        <div class="bottomBtns">
+
+            <br>  
+            <button id="toggleExtraCompBtn">Show extra compounds</button>
+            <div style="height: 4px;"></div>
+            <button id="depthsBtn">Toggle Optimal Depths</button> <button id="layersBtn">Toggle Layers</button> 
+            <div style="height: 4px;"></div>
+            <input type="button" id="btn1" value="Create List">
+
         <p>List of Materials:</p>
         <p class="output" id="out"></p>
         
