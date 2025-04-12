@@ -298,8 +298,11 @@
         //Extra Compounds
 
         //Ts
-        if(!isNaN(1*Ts.value)) transcendium(Ts.value);
-
+        if(!isNaN(1*Ts.value)){
+        if(1*Ts.value % 2 == 0) transcendium(Ts.value/2);
+        else transcendium((parseInt(Ts.value)+1)/2)
+        }
+        
         //DUk
         if(!isNaN(1*DUk.value)) destUklic(DUk.value);
 
