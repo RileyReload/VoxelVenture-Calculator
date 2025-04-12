@@ -572,7 +572,7 @@ export function nihilize(x){
 }
 
 export function superunobtanium(x){
-    Adurite += 2*x;
+    Adurite += 3*x;
     Cryptium += 4*x;
     Impervium += 4*x;
     strainyx(6*x);
