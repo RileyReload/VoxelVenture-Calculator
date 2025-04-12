@@ -319,7 +319,7 @@
         if(!isNaN(1*Nz.value)) nihilize(Nz.value);
 
         //Dv
-        if(!isNaN(1*Dv.value)) apeirodyn(Dv.value);
+        if(!isNaN(1*Dv.value)) diviscendium(Dv.value);
 
         //Ap
         if(!isNaN(1*Ap.value)) apeirodyn(Ap.value);
@@ -605,14 +605,14 @@ export function destAlbinite(x){
 }
 
 export function athil(x){
-    Monolite += x;
-    Tissuryal += x;
+    Monolite += 3*x;
+    Tissuryal += 5*x;
     Axnit += x;
 }
 
 export function cygnum(x){
-    Monoflame += x;
-    Disruptoil += x;
+    Monoflame += 3*x;
+    Disruptoil += 5*x;
     Iocryx += x;
 }
 
