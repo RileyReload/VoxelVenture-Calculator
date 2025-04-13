@@ -1,0 +1,504 @@
+
+@media (max-width: 599px){
+    .bottomBtns{
+        margin-top: 320px;
+    }
+
+    .compounds{
+        /* row 1 */
+        .apeirodyn{
+          width: 100%;
+          height: 318.5px;
+        }
+        .nihilize{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+        /* row 2 */
+        .chargedVoxine{
+          width: 100%;
+          height: 318.5px;
+        }
+        .planckspark{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+        /* row 3 */
+        .chromar{
+          width: 100%;
+          height: 318.5px;
+        }
+        .polloihedrav{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+        /* row 4 */
+        .complux{
+          width: 100%;
+          height: 318.5px;
+        }
+        .poltergeire{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+        /* row 5 */
+        .destAlbinite{
+          width: 100%;
+          height: 318.5px;
+        }
+        .primatter{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+        /* row 6 */
+        .destUklic{
+          width: 100%;
+          height: 318.5px;
+        }
+        .staticacyne{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+        /* row 7 */
+        .diviscendium{
+          width: 100%;
+          height: 318.5px;
+        }
+        .superbium{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+        /* row 8 */
+        .duskyze{
+          width: 100%;
+          height: 318.5px;
+        }
+        .superunobtainium{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+        /* row 9 */
+        .elementak{
+          width: 100%;
+          height: 318.5px;
+        }
+        .transcendium{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+        /* row 10 */
+        .endozivite{
+          width: 100%;
+          height: 318.5px;
+        }
+        .trueVoxine{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+        /* row 11 */
+        .grawbix{
+          width: 100%;
+          height: 318.5px;
+        }
+        .tyrantizum{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+        /* row 12 */
+        .hyperunobtainium{
+          width: 100%;
+          height: 318.5px;
+        }
+        .venturium{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+        /* row 13 */
+        .hyperviolium{
+          width: 100%;
+          height: 318.5px;
+        }
+        .vulkavium{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+        /* row 14 */
+        .metarnityle{
+          width: 100%;
+          height: 318.5px;
+        }
+        .wavettap{
+          width: 100%;
+          height: 318.5px;
+        }
+      
+      }
+}
+@media (599px < width) and (width < 900px){
+    .compounds{
+    
+        /* row 1 */
+        .apeirodyn{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .nihilize{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+      
+        /* row 2 */
+        .chargedVoxine{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .planckspark{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+      
+        /* row 3 */
+        .chromar{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .polloihedrav{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+      
+        /* row 4 */
+        .complux{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .poltergeire{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+      
+        /* row 5 */
+        .destAlbinite{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .primatter{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+      
+        /* row 6 */
+        .destUklic{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .staticacyne{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+      
+        /* row 7 */
+        .diviscendium{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .superbium{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+      
+        /* row 8 */
+        .duskyze{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .superunobtainium{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+      
+        /* row 9 */
+        .elementak{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .transcendium{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+      
+        /* row 10 */
+        .endozivite{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .trueVoxine{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+      
+        /* row 11 */
+        .grawbix{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .tyrantizum{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+      
+        /* row 12 */
+        .hyperunobtainium{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .venturium{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+      
+        /* row 13 */
+        .hyperviolium{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .vulkavium{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+        
+        /* row 14 */
+        .metarnityle{
+          width: 45%;
+          float: left;
+          height: 20px;
+        }
+        .wavettap{
+          width: 45%;
+          margin-left: 50%;
+          height: 20px;
+        }
+      }
+        
+}
+@media (width >= 900px){
+    .compounds{
+    
+        /* row 1 */
+        .apeirodyn{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .nihilize{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+        /* row 2 */
+        .chargedVoxine{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .planckspark{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+        /* row 3 */
+        .chromar{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .polloihedrav{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+        /* row 4 */
+        .complux{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .poltergeire{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+        /* row 5 */
+        .destAlbinite{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .primatter{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+        /* row 6 */
+        .destUklic{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .staticacyne{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+        /* row 7 */
+        .diviscendium{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .superbium{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+        /* row 8 */
+        .duskyze{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .superunobtainium{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+        /* row 9 */
+        .elementak{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .transcendium{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+        /* row 10 */
+        .endozivite{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .trueVoxine{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+        /* row 11 */
+        .grawbix{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .tyrantizum{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+        /* row 12 */
+        .hyperunobtainium{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .venturium{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+        /* row 13 */
+        .hyperviolium{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .vulkavium{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+        /* row 14 */
+        .metarnityle{
+          width: 30%;
+          float: left;
+          height: 20px;
+        }
+        .wavettap{
+          width: 30%;
+          margin-left: 35%;
+          height: 20px;
+        }
+      
+      
+      }
+      
+         
+}
+  
+#multitoolsBtn{
+      pointer-events: none;
+      background-color: gray;
+      text-decoration: line-through;
+}
