@@ -601,7 +601,12 @@ export function hyperviolium(x){
 Compressium += 1*x;
 Hyperbolt += 7*x;
 Singularium += 1*x;
-transcendium(x);
+if(x % 2 == 0){
+    transcendium(x/2);
+}
+else{
+    (transcendium((x+1)/2));
+}
 superviolium(5*x);
 }
 export function enchantedJetchium(x){
