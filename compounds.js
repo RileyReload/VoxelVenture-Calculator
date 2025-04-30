@@ -387,7 +387,7 @@ elementak(5*y);
 tyrantizum(3*y);
 hyperunobtainium(5*y);
 metarnityle(3*y);
-trueVoxine(3*y);
+trueVoxine(6*y);
 Journoule += 9*y;
 }
 else{
@@ -396,7 +396,7 @@ elementak(5*y);
 tyrantizum(3*y);
 hyperunobtainium(5*y);
 metarnityle(3*y);
-trueVoxine(3*y);
+trueVoxine(6*y);
 Journoule += 9*y;
 }
 }
