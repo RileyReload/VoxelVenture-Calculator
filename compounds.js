@@ -275,10 +275,7 @@ $("#btn1").click(function(){
     if(!isNaN(1*Ap.value)) apeirodyn(Ap.value);
 
     //CVx
-    if(!isNaN(1*CVx.value)){
-    if(1*CVx.value % 64 == 0) chargedVoxine(CVx.value/64);
-    else chargedVoxine(Math.ceil(CVx.value/64));
-    }
+    if(!isNaN(1*CVx.value)) chargedVoxine(CVx.value)
 
     //Ch
     if(!isNaN(1*Ch.value)) chromar(Ch.value);
@@ -414,12 +411,24 @@ apeirodyn(4*x);
 Nepium += 1*x;
 }
 export function chargedVoxine(x){
-Etherglow += 64*x;
-Gravitral += 7*x;
-hyperviolium(6*x);
-Quasine += 3*x;
-VoxianCluster += 16*x;
-Wonderbrick += 16*x;
+if(x%64 == 0){
+let y = x/64
+Etherglow += 64*y;
+Gravitral += 7*y;
+hyperviolium(6*y);
+Quasine += 3*y;
+VoxianCluster += 16*y;
+Wonderbrick += 16*y;
+}
+else{
+let y = (x/64)+1
+Etherglow += 64*y;
+Gravitral += 7*y;
+hyperviolium(6*y);
+Quasine += 3*y;
+VoxianCluster += 16*y;
+Wonderbrick += 16*y; 
+}
 }
 export function complux(x){
 Necrix += 14*x;
