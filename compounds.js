@@ -341,25 +341,16 @@ $("#btn1").click(function(){
     }
 
     //Ts
-    if(!isNaN(1*Ts.value)){
-    if(1*Ts.value % 2 == 0) transcendium(Ts.value/2);
-    else transcendium((parseInt(Ts.value)+1)/2)
-    }
+    if(!isNaN(1*Ts.value)) transcendium(Ts.value/2)
 
     //TVx
-    if(!isNaN(1*TVx.value)){
-    if(1*TVx.value % 2 == 0) trueVoxine(TVx.value/2);
-    else trueVoxine((parseInt(TVx.value)+1)/2);
-    }
-
+    if(!isNaN(1*TVx.value)) trueVoxine(TVx.value/2);
+    
     //Ty
     if(!isNaN(1*Ty.value)) tyrantizum(Ty.value);
 
     //Vn
-    if(!isNaN(1*Vn.value)){
-    if(1*Vn.value % 2 == 0) venturium(Vn.value/2);
-    else venturium((parseInt(Vn.value)+1)/2);
-    } 
+    if(!isNaN(1*Vn.value)) venturium(Vn.value)
 
     //Vk
     if(!isNaN(1*Vk.value)) vulkavium(Vk.value);
@@ -390,29 +381,48 @@ Polybium += 1*x;
 Toxintine += 8*x;
 }
 export function venturium(x){
-elementak(5*x);
-tyrantizum(3*x);
-hyperunobtainium(5*x);
-metarnityle(3*x);
-trueVoxine(3*x);
-Journoule += 9*x;
-}
-export function trueVoxine(x){
-if(x % 2 == 0){
-    chargedVoxine(x/2);
+if(x%2 == 0){
+let y = x/2;
+elementak(5*y);
+tyrantizum(3*y);
+hyperunobtainium(5*y);
+metarnityle(3*y);
+trueVoxine(3*y);
+Journoule += 9*y;
 }
 else{
-    (chargedVoxine((x+1)/2));
+let y = (Math.floor(x/2))+1;
+elementak(5*y);
+tyrantizum(3*y);
+hyperunobtainium(5*y);
+metarnityle(3*y);
+trueVoxine(3*y);
+Journoule += 9*y;
 }
-complux(2*x);
-Niobium += 2*x;
-Kappron += 4*x;
-apeirodyn(4*x);
-Nepium += 1*x;
+}
+export function trueVoxine(x){
+if(x%2 == 0){
+let y = x/2;
+chargedVoxine(32*y)
+complux(2*y);
+Niobium += 2*y;
+Kappron += 4*y;
+apeirodyn(4*y);
+Nepium += 1*y;
+}
+else{
+let y = (Math.floor(x/2))+1;
+chargedVoxine(32*y)
+complux(2*y);
+Niobium += 2*y;
+Kappron += 4*y;
+apeirodyn(4*y);
+Nepium += 1*y;
+}
 }
 export function chargedVoxine(x){
 if(x%64 == 0){
-let y = x/64
+let y = x/64;
 Etherglow += 64*y;
 Gravitral += 7*y;
 hyperviolium(6*y);
@@ -421,7 +431,7 @@ VoxianCluster += 16*y;
 Wonderbrick += 16*y;
 }
 else{
-let y = (x/64)+1
+let y = (Math.floor(x/64))+1;
 Etherglow += 64*y;
 Gravitral += 7*y;
 hyperviolium(6*y);
@@ -500,10 +510,20 @@ Tetrabeam += 4*x;
 Tetramyle += 4*x;
 }
 export function chromar(x){
-Bismuth += 1*x;
-Chromium += 16*x;
-refinedIridium(7*x);
-Spectrian += 3*x;
+if(x%2 == 0){
+let y = x/2;
+Bismuth += 1*y;
+Chromium += 16*y;
+refinedIridium(7*y);
+Spectrian += 3*y;
+}
+else{
+let y = (Math.floor(x/2))+1;  
+Bismuth += 1*y;
+Chromium += 16*y;
+refinedIridium(7*y);
+Spectrian += 3*y;  
+}
 }
 export function grawbix(x){
 refinedPalladium(2*x);
@@ -599,23 +619,30 @@ athil(2*x);
 cygnum(2*x);
 }
 export function superunobtanium(x){
-Adurite += 3*x;
-Cryptium += 4*x;
-Impervium += 4*x;
-strainyx(6*x);
-Spicyte += 2*x;
-Unobtanium += 2*x;
+if(x%2 == 0){
+let y = x/2;
+Adurite += 3*y;
+Cryptium += 4*y;
+Impervium += 4*y;
+strainyx(6*y);
+Spicyte += 2*y;
+Unobtanium += 2*y;
+}
+else{
+let y = (Math.floor(x/2))+1;
+Adurite += 3*y;
+Cryptium += 4*y;
+Impervium += 4*y;
+strainyx(6*y);
+Spicyte += 2*y;
+Unobtanium += 2*y;
+}
 }
 export function hyperviolium(x){
 Compressium += 1*x;
 Hyperbolt += 7*x;
 Singularium += 1*x;
-if(x % 2 == 0){
-    transcendium(x/2);
-}
-else{
-    (transcendium((x+1)/2));
-}
+transcendium(1*x);
 superviolium(5*x);
 }
 export function enchantedJetchium(x){
@@ -668,9 +695,18 @@ Luxium += 5*x;
 Univine += 1*x;
 }
 export function transcendium(x){
-albinite(3*x);
-uklic(2*x);
-Bismuth += 1*x;
+if(x%2 == 0){
+let y = x/2;
+albinite(3*y);
+uklic(2*y);
+Bismuth += 1*y;
+}
+else{
+let y = (Math.floor(x/2))+1;
+albinite(3*y);
+uklic(2*y);
+Bismuth += 1*y;
+}
 }
 export function pulsane(x){
 Fractastone += 3*x;
