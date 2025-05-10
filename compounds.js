@@ -646,10 +646,20 @@ transcendium(1*x);
 superviolium(5*x);
 }
 export function enchantedJetchium(x){
-equilibrian(4*x);
-Infernum += 1*x;
-Jetchium += 2*x;
-Tafil += 4*x;
+if(x%2 == 0){
+let y = x/2;
+equilibrian(4*y);
+Infernum += 1*y;
+Jetchium += 2*y;
+Tafil += 4*y;
+}
+else{
+let y = (Math.floor(x/2))+1;
+equilibrian(4*y);
+Infernum += 1*y;
+Jetchium += 2*y;
+Tafil += 4*y;
+}
 }
 export function destUklic(x){
 Frostflake += 1*x;
