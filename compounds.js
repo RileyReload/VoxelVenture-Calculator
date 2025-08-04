@@ -611,7 +611,7 @@ Lightskyze += 6*x;
 Nightskyze += 6*x;
 pulsane(x);
 Sand += 12*x;
-Stasistiss += 12*x;
+Stasistiss += 2*x;
 }
 export function nihilize(x){
 Anarquize += 2*x;
@@ -1760,3 +1760,4 @@ out += ruinus();
 out += depletia();
 return out;
 }
+
