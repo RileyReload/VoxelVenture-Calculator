@@ -336,15 +336,15 @@ $("#btn1").click(function(){
 
     //Un+
     if(!isNaN(1*Un1.value)){
-    if(1*Un1.value % 2 == 0) superunobtanium(Un1.value/2);
-    else superunobtanium((parseInt(Un1.value)+1)/2)
+    if(1*Un1.value % 2 == 0) superunobtanium(Un1.value);
+    else superunobtanium((parseInt(Un1.value)+1))
     }
 
     //Ts
-    if(!isNaN(1*Ts.value)) transcendium(Ts.value/2)
+    if(!isNaN(1*Ts.value)) transcendium(Ts.value)
 
     //TVx
-    if(!isNaN(1*TVx.value)) trueVoxine(TVx.value/2);
+    if(!isNaN(1*TVx.value)) trueVoxine(TVx.value);
     
     //Ty
     if(!isNaN(1*Ty.value)) tyrantizum(Ty.value);
@@ -1760,4 +1760,5 @@ out += ruinus();
 out += depletia();
 return out;
 }
+
 
