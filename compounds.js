@@ -683,7 +683,7 @@ Iocryx += x;
 }
 export function quantalyx(x){
 Antiquarkian += 4*x;
-Quantizite += 4*x;
+Quarkian += 4*x;
 Gluonyke += 1*x;
 Quantizite += 6*x;
 }
@@ -1760,5 +1760,6 @@ out += ruinus();
 out += depletia();
 return out;
 }
+
 
 
