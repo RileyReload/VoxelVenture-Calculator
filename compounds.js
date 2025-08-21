@@ -784,6 +784,7 @@ midendum(1*x)
 Necropolite += 4*x;
 sivignite(2*x);
 VanadiumOre += 12*x;
+Phosphorus += 12*x;
 }
 export function electronine(x){
 Amperium += 16*x;
@@ -1760,6 +1761,7 @@ out += ruinus();
 out += depletia();
 return out;
 }
+
 
 
 
