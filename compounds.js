@@ -851,7 +851,7 @@ IronOre += 1*x;
 }
 export function refinedSteel(x){
 Carbon += 1*x;
-refinedIron += 2*x;
+refinedIron(2*x);
 }
 export function refinedZirconium(x){
 Ruinol += 1*x;
@@ -1761,6 +1761,7 @@ out += ruinus();
 out += depletia();
 return out;
 }
+
 
 
 
